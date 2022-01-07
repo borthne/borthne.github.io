@@ -1,0 +1,18 @@
+---
+layout: default
+title: About
+---
+<h3>Papers</h3>
+<ul>
+    {% for paper in site.data.papers %}
+    <li>
+        <a href="{{ paper.url }}">{{ paper.title }}</a>
+        <br>
+        {% for author in paper.authors %}{% if forloop.first == false %}{% if forloop.last == true %} and {% else %}, {% endif %}{% endif %}{% if author == "me" %}<b>&Oslash;yvind L. Borthne</b>{% else %}{{ author }}{% endif %}{% endfor %},
+        {{ paper.journal }}
+        <b>{{ paper.volume }}</b>,
+        {{ paper.pages }}
+        ({{ paper.year }})
+    </li>
+    {% endfor %}
+</ul>

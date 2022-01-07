@@ -1,0 +1,13 @@
+---
+layout: default
+title: Projects
+---
+{% for project in site.projects %}
+<div id="{{ project.short }}"><h2>{{ project.title }}</h2></div>
+<p>{{ project.content | markdownify }}</p>
+{% if forloop.last == false %}
+<br>
+<hr>
+<br>
+{% endif %}
+{% endfor %}
